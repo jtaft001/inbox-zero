@@ -54,7 +54,7 @@ services:
       
       # NextAuth
       NEXTAUTH_SECRET: ${NEXTAUTH_SECRET}
-      NEXTAUTH_URL: https://inbox-zero.${DOMAIN}
+      NEXTAUTH_URL: https://inbox-zero.taft-ranch.com
       
       # Google APIs
       GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
@@ -87,7 +87,7 @@ services:
       - inbox-zero-network
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.inbox-zero.rule=Host(`inbox-zero.${DOMAIN}`)"
+      - "traefik.http.routers.inbox-zero.rule=Host(`inbox-zero.taft-ranch.com`)"
       - "traefik.http.routers.inbox-zero.tls=true"
       - "traefik.http.routers.inbox-zero.tls.certresolver=cloudflare"
       - "traefik.http.services.inbox-zero.loadbalancer.server.port=3000"
