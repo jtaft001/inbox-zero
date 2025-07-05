@@ -72,10 +72,9 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.inbox-zero.rule=Host(`inbox-zero.taft-ranch.com`)"
-      - "traefik.http.routers.inbox-zero.tls=true"
-      - "traefik.http.routers.inbox-zero.tls.certresolver=cloudflare"
       - "traefik.http.services.inbox-zero.loadbalancer.server.port=3000"
       - "traefik.docker.network=web"
+      # No TLS labels - Cloudflare tunnel handles TLS termination
 
 volumes:
   inbox_zero_redis_data:
