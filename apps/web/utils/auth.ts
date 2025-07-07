@@ -24,6 +24,7 @@ export const getAuthOptions: (options?: {
   consent: boolean;
 }) => NextAuthConfig = (options) => ({
   debug: false,
+  trustHost: true,
   providers: [
     GoogleProvider({
       clientId: env.GOOGLE_CLIENT_ID,
