@@ -28,7 +28,9 @@ services:
       - redis
 
   web:
-    build: .
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.prod
     restart: unless-stopped
     container_name: inbox-zero-web
     environment:
