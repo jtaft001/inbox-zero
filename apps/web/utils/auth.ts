@@ -25,6 +25,7 @@ export const getAuthOptions: (options?: {
 }) => NextAuthConfig = (options) => ({
   debug: false,
   trustHost: true,
+  allowDangerousEmailAccountLinking: true,
   providers: [
     GoogleProvider({
       clientId: env.GOOGLE_CLIENT_ID,
