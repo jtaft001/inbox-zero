@@ -28,7 +28,7 @@ services:
       - redis
 
   web:
-    image: ghcr.io/elie222/inbox-zero:latest
+    build: .
     restart: unless-stopped
     container_name: inbox-zero-web
     environment:
